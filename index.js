@@ -17,10 +17,14 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Home");
+});
+
 app.use("/", router);
 
 connectMongoDB();
 
 app.listen(port, () => {
-    console.log(`${port}`);
+    console.log(`Server is running on port ${port}`);
 });

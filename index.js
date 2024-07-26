@@ -17,10 +17,6 @@ app.use(
 );
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("Home");
-});
-
 app.use("/", router);
 
 connectMongoDB();

@@ -9,13 +9,26 @@ dotenv.config();
 const app = express();
 
 const port = 3000;
-app.use(cors());
+
+// Cấu hình lại cors
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
+
 app.use(
     express.urlencoded({
         extended: true,
     })
 );
 app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Home");
+});
 
 app.use("/", router);
 

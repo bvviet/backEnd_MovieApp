@@ -13,7 +13,7 @@ const port = 3000;
 // Cấu hình lại cors
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin: "https://front-movie-app-9m1zgx4mt-vietbvs-projects-572ba0c2.vercel.app",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
